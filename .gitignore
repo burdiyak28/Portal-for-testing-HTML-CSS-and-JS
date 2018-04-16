@@ -1,0 +1,5 @@
+staff/
+.idea/
+src/vendor/
+src/composer.lock
+public/js/node_modules/

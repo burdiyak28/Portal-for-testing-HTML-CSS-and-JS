@@ -1,0 +1,21 @@
+{
+    "require": {
+        "delight-im/auth": "^7.2",
+        "filp/whoops": "^2.1",
+        "phpmailer/phpmailer": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\Core\\": "app/Core/",
+            "App\\Controllers\\": "app/Controllers/",
+            "App\\Models\\": "app/Models/",
+            "App\\SQLs\\": "app/SQLs/",
+            "App\\Tools\\": "app/Tools/",
+            "App\\Lib\\": "app/Lib/",
+            "App\\Exceptions\\": "app/Exceptions/"
+        },
+        "files": [
+            "bootstrap.php"
+        ]
+    }
+}
