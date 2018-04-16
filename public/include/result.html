@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <style type="text/css">
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+    </style>
+    <style type="text/css" id="container-css"></style>
+    <script type="text/javascript" id="container-js"></script>
+
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(window).ready(function () {
+            try {
+                var js = (window.localStorage.getItem('js') && window.localStorage.getItem('js').length !== 0) ? window.localStorage.getItem('js') : '';
+            } catch (e) {
+                var js = '';
+            }
+            try {
+                var css = (window.localStorage.getItem('css') && window.localStorage.getItem('css').length !== 0) ? window.localStorage.getItem('css') : '';
+            } catch (e) {
+                var css = '';
+            }
+            try {
+                var html = (window.localStorage.getItem('html') && window.localStorage.getItem('html').length !== 0) ? window.localStorage.getItem('html') : '';
+            } catch (e) {
+                var html = '';
+            }
+
+
+            $('style#container-css').empty().append(css);
+            $('script#container-js').empty().append(js);
+            $('body#container-html').empty().append(html);
+
+
+            $(window).bind('storage', function (e) {
+                if (e.originalEvent.key === 'css') {
+                    $('style#container-css').empty().append(e.originalEvent.newValue);
+                } else if (e.originalEvent.key === 'js') {
+                    $('script#container-js').empty().append(e.originalEvent.newValue);
+                } else if (e.originalEvent.key === 'html') {
+                    $('body#container-html').empty().append(e.originalEvent.newValue);
+                }
+            });
+
+        });
+    </script>
+</head>
+<body id="container-html"></body>
+</html>

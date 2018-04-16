@@ -1,0 +1,146 @@
+@import "_variables.sass"
+
+#particles-js
+  top: 0
+  left: 0
+  z-index: 0
+  position: absolute
+  width: 100%
+  height: 100%
+
+#home
+  .main
+    position: relative
+    height: auto
+    min-height: 100vh
+    background-size: cover
+    background-position: center
+    background-attachment: fixed
+    transition: height 0.3s linear
+    padding: $main-padding
+
+    .col-md-6
+      .description, p
+        text-align: $text-align-h
+        color: black
+        margin: $margin-inside
+
+      p
+        font-size: 16px
+        color: black
+
+      .create-signin-btn
+        display: block
+        text-align: $text-align-h
+
+      .panel-group
+        h2
+          text-align: $text-align-h
+          margin: $margin-inside
+
+
+        .panel, panel-default
+          .page-heading
+            a
+              text-decoration: none
+              :hover
+                color: $link-color
+                text-decoration: none
+
+  #next-bottom
+    position: relative
+    bottom: 35px
+    left: 50%
+    margin-left: -7px
+    width: 30px
+
+    #next
+      text-decoration: none
+      color: #ba281e
+      font-size: 26px
+
+  .popular
+    padding: $main-padding
+    .col-md-12
+      text-align: $text-align-h
+      display: inline-block
+      #popular, .dropdown
+        float: left
+        padding: 5% 0
+        p
+          font-size: 16px
+          padding: 10% 0
+
+      .dropdown
+        padding-bottom: 5px
+        padding-left: 10px
+      h2
+        text-align: $text-align-h
+
+  @media screen and (max-width: 767px)
+    .masonry[data-columns]::before
+      content: '1 .col-xs-12'
+
+  @media screen and (min-width: 768px) and (max-width: 991px)
+    .masonry[data-columns]::before
+      content: '2 .col-xs-6'
+
+  @media screen and (min-width: 992px) and (max-width: 1199px)
+    .masonry[data-columns]::before
+      content: '3 .col-xs-4'
+
+  @media screen and (min-width: 1200px)
+    .masonry[data-columns]::before
+      content: '4 .col-xs-3'
+
+  .thumb-data
+    width: 100%
+    height: 100px
+    background-image: linear-gradient(to bottom,#5cb85c 0,#419641 100%)
+    p
+      text-align: center
+      position: relative
+      top: 50%
+      transform: translateY(-50%)
+      color: white
+      font-weight: 600
+      font-size: 2rem
+
+  .footer
+    background-color: #222222
+    padding: 10px 0px 0px 0px
+    ul
+      list-style: none
+      margin: 0 auto
+      display: inline-block
+      padding-top: 0px
+      li
+        float: left
+        a
+          color: #b1aca1
+          padding: 20px
+          :hover
+            color: $link-color
+            text-decoration: none
+
+    .footer-top
+      padding-bottom: 10px
+      .fa
+      font-size: 16px
+      color: #FFF
+      padding-right: 10px
+      a
+        color: #FFF
+        text-decoration: none
+      .col-md-3:hover
+        .fa, a
+          color: $link-color
+
+    .copyright
+      background-color: #f0f0f0
+      p
+        font-size: 12px
+        padding: 15px 0 10px 0
+
+
+
